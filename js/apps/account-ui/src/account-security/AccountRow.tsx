@@ -97,18 +97,26 @@ export const AccountRow = ({
         >
           {isLinked && (
             <Button
+              icon={
+                <Icon size="sm">
+                  <UnlinkIcon />
+                </Icon>
+              }
               id={`${account.providerAlias}-idp-unlink`}
               variant="link"
               onClick={() => unLink(account)}
             >
-              <Icon size="sm">
-                <UnlinkIcon />
-              </Icon>{" "}
+              {" "}
               {t("unLink")}
             </Button>
           )}
           {!isLinked && (
             <Button
+              icon={
+                <Icon size="sm">
+                  <LinkIcon />
+                </Icon>
+              }
               id={`${account.providerAlias}-idp-link`}
               variant="link"
               onClick={async () => {
@@ -117,9 +125,7 @@ export const AccountRow = ({
                 });
               }}
             >
-              <Icon size="sm">
-                <LinkIcon />
-              </Icon>{" "}
+              {" "}
               {t("link")}
             </Button>
           )}

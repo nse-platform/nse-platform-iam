@@ -45,8 +45,8 @@ export default function UsersSection() {
         divider={false}
       />
       <PageSection
+        hasBodyWrapper={false}
         data-testid="users-page"
-        variant="light"
         className="pf-v5-u-p-0"
       >
         <RoutableTabs
@@ -55,7 +55,7 @@ export default function UsersSection() {
             realm: realmName,
             tab: "list",
           })}
-          isBox
+          isBox={false}
           mountOnEnter
         >
           <Tab

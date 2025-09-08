@@ -24,6 +24,7 @@ export const ClientRegistration = () => {
 
   return (
     <RoutableTabs
+      isBox={false}
       defaultLocation={toClientRegistration({ realm, subTab: "anonymous" })}
       mountOnEnter
       unmountOnExit

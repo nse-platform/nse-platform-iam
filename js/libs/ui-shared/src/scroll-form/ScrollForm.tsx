@@ -67,7 +67,7 @@ export const ScrollForm = ({
         })}
       </GridItem>
       <GridItem md={4} sm={12} order={{ default: "-1", md: "1" }}>
-        <PageSection className={style.sticky}>
+        <PageSection hasBodyWrapper={false} className={style.sticky}>
           <JumpLinks
             isVertical
             // scrollableSelector has to point to the id of the element whose scrollTop changes
@@ -81,6 +81,7 @@ export const ScrollForm = ({
 
               return (
                 <JumpLinksItem
+                  href={`jump-link-${scrollId}`}
                   key={title}
                   onClick={() => {
                     const element = document.getElementById(scrollId);

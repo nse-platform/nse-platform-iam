@@ -1,11 +1,5 @@
-import {
-  Button,
-  Modal,
-  ModalVariant,
-  Page,
-  Text,
-  TextContent,
-} from "@patternfly/react-core";
+import { Button, Page, Content } from "@patternfly/react-core";
+import { Modal, ModalVariant } from "@patternfly/react-core/deprecated";
 import { useTranslation } from "react-i18next";
 import { getNetworkErrorMessage } from "../utils/errors";
 
@@ -38,15 +32,17 @@ export const ErrorPage = (props: ErrorPageProps) => {
           </Button>,
         ]}
       >
-        <TextContent>
+        <Content>
           {errorMessage ? (
-            <Text>{t(errorMessage)}</Text>
+            <Content component="p">{t(errorMessage)}</Content>
           ) : networkErrorMessage && i18n.exists(networkErrorMessage) ? (
-            <Text>{t(networkErrorMessage)}</Text>
+            <Content component="p">{t(networkErrorMessage)}</Content>
           ) : (
-            <Text>{t("somethingWentWrongDescription")}</Text>
+            <Content component="p">
+              {t("somethingWentWrongDescription")}
+            </Content>
           )}
-        </TextContent>
+        </Content>
       </Modal>
     </Page>
   );

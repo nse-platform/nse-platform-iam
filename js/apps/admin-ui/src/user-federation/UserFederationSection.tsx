@@ -11,9 +11,9 @@ import {
   PageSection,
   Split,
   SplitItem,
-  Text,
-  TextContent,
-  TextVariants,
+  Content,
+  ContentVariants,
+  Divider,
 } from "@patternfly/react-core";
 import { DatabaseIcon } from "@patternfly/react-icons";
 import { useMemo, useState } from "react";
@@ -191,20 +191,20 @@ export default function UserFederationSection() {
             }
           : {})}
       />
-      <PageSection>
+      <PageSection hasBodyWrapper={false}>
         {userFederations && userFederations.length > 0 ? (
           <Gallery hasGutter>{cards}</Gallery>
         ) : (
           <>
-            <TextContent>
-              <Text component={TextVariants.p}>{t("getStarted")}</Text>
-            </TextContent>
-            <TextContent>
-              <Text className="pf-v5-u-mt-lg" component={TextVariants.h2}>
+            <Content>
+              <Content component={ContentVariants.p}>{t("getStarted")}</Content>
+            </Content>
+            <Content>
+              <Content className="pf-v6-u-mt-lg" component={ContentVariants.h2}>
                 {t("add-providers")}
-              </Text>
-            </TextContent>
-            <hr className="pf-v5-u-mb-lg" />
+              </Content>
+            </Content>
+            <Divider />
             <Gallery hasGutter>
               {providers.map((p) => (
                 <ClickableCard

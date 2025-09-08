@@ -28,6 +28,7 @@ export const SwitchControl = <
   P extends FieldPath<T> = FieldPath<T>,
 >({
   labelOn,
+  labelOff,
   stringify,
   defaultValue,
   labelIcon,
@@ -53,8 +54,8 @@ export const SwitchControl = <
             {...props}
             id={props.name}
             data-testid={debeerify(props.name)}
-            label={labelOn}
-            isChecked={stringify ? value === "true" : value}
+            label={(stringify ? value === "true" : value) ? labelOn : labelOff}
+            checked={stringify ? value === "true" : value}
             onChange={(e, checked) => {
               const value = stringify ? checked.toString() : checked;
               props.onChange?.(e, checked);

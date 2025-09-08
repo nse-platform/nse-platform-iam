@@ -14,7 +14,11 @@ export const FormErrorText = ({ message, ...props }: FormErrorTextProps) => {
   return (
     <FormHelperText {...props}>
       <HelperText>
-        <HelperTextItem icon={<ExclamationCircleIcon />} variant="error">
+        <HelperTextItem
+          icon={<ExclamationCircleIcon />}
+          variant="error"
+          screenReaderText="Error details"
+        >
           {message}
         </HelperTextItem>
       </HelperText>

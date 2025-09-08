@@ -65,6 +65,7 @@ export const KeysTab = () => {
 
   return (
     <RoutableTabs
+      isBox={false}
       mountOnEnter
       unmountOnExit
       defaultLocation={toKeysTab({ realm: realmName, tab: "list" })}

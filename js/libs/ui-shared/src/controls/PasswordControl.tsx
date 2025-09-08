@@ -63,7 +63,9 @@ export const PasswordControl = <
       {props.helperText && (
         <FormHelperText>
           <HelperText>
-            <HelperTextItem>{props.helperText}</HelperTextItem>
+            <HelperTextItem screenReaderText={props.helperText}>
+              {props.helperText}
+            </HelperTextItem>
           </HelperText>
         </FormHelperText>
       )}

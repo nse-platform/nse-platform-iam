@@ -15,8 +15,7 @@ import {
   DropdownList,
   MenuToggle,
   Popover,
-  Text,
-  TextContent,
+  Content,
   ToolbarItem,
 } from "@patternfly/react-core";
 import { EllipsisVIcon, QuestionCircleIcon } from "@patternfly/react-icons";
@@ -144,16 +143,11 @@ export const DefaultsGroupsTab = () => {
             </Trans>
           }
         >
-          <TextContent
-            className="keycloak__section_intro__help"
-            style={{
-              paddingLeft: "var(--pf-v5-c-page__main-section--PaddingLeft)",
-            }}
-          >
-            <Text>
+          <Content className="keycloak__section_intro__help">
+            <Content component="p">
               <QuestionCircleIcon /> {t("whatIsDefaultGroups")}
-            </Text>
-          </TextContent>
+            </Content>
+          </Content>
         </Popover>
       )}
       <KeycloakDataTable

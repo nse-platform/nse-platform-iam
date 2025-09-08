@@ -62,10 +62,7 @@ export const FlowTitle = ({
   return (
     <div data-testid={title}>
       <span data-id={id} id={`title-id-${id}`}>
-        <Label icon={<FlowIcon type={type} />} color={mapTypeToColor(type)}>
-          {t(type)}
-        </Label>{" "}
-        {title}{" "}
+        <Label icon={<FlowIcon type={type} />}>{t(type)}</Label> {title}{" "}
         {helpText && <HelpItem helpText={helpText} fieldLabelId={id!} />}
       </span>
     </div>

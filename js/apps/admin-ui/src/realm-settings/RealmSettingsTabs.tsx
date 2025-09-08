@@ -320,9 +320,9 @@ export const RealmSettingsTabs = () => {
           />
         )}
       />
-      <PageSection variant="light" className="pf-v5-u-p-0">
+      <PageSection hasBodyWrapper={false} className="pf-v5-u-p-0">
         <RoutableTabs
-          isBox
+          isBox={false}
           mountOnEnter
           aria-label="realm-settings-tabs"
           defaultLocation={toRealmSettings({
@@ -414,6 +414,7 @@ export const RealmSettingsTabs = () => {
               {...clientPoliciesTab}
             >
               <RoutableTabs
+                isBox={false}
                 mountOnEnter
                 defaultLocation={toClientPolicies({
                   realm: realmName,

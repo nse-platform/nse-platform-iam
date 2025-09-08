@@ -159,6 +159,7 @@ styles=css/login.css css/theme-styles.css
 
   return (
     <RoutableTabs
+      isBox={false}
       mountOnEnter
       unmountOnExit
       defaultLocation={toThemesTab({

@@ -17,7 +17,8 @@ export type TextAreaControlProps<
   T extends FieldValues,
   P extends FieldPath<T> = FieldPath<T>,
 > = UseControllerProps<T, P> &
-  TextAreaProps & {
+  Omit<TextAreaProps, "onChange" | "value"> & {
+    // // 排除掉不想覆盖的 TextAreaProps
     label: string;
     labelIcon?: string;
     isDisabled?: boolean;
@@ -29,6 +30,14 @@ export const TextAreaControl = <
 >(
   props: TextAreaControlProps<T, P>,
 ) => {
+  const {
+    label,
+    labelIcon,
+    isDisabled,
+    rules,
+    defaultValue: dv,
+    ...textAreaProps
+  } = props;
   const required = !!props.rules?.required;
   const defaultValue = props.defaultValue ?? ("" as PathValue<T, P>);
 
@@ -53,7 +62,7 @@ export const TextAreaControl = <
           fieldState.error ? ValidatedOptions.error : ValidatedOptions.default
         }
         isDisabled={props.isDisabled}
-        {...props}
+        {...textAreaProps}
         {...field}
       />
     </FormLabel>

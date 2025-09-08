@@ -1,5 +1,6 @@
 import { KeyboardEvent, useId } from "react";
-import { Card, CardHeader, CardProps } from "@patternfly/react-core";
+import { Card, CardHeader, CardProps, CardBody } from "@patternfly/react-core";
+import { prettyPrintJSON } from "../../util";
 
 type ClickableCardProps = Omit<CardProps, "onClick"> & {
   onClick: () => void;
@@ -17,16 +18,15 @@ export const ClickableCard = ({
     }
   };
   return (
-    <Card id={id} isClickable onKeyDown={onKeyDown} onClick={onClick} {...rest}>
-      <CardHeader
-        selectableActions={{
-          onClickAction: onClick,
-          selectableActionId: `input-${id}`,
-          selectableActionAriaLabelledby: id,
-        }}
-      >
-        {children}
-      </CardHeader>
+    <Card
+      id={id}
+      isClickable
+      onKeyDown={onKeyDown}
+      onClick={onClick}
+      {...rest}
+      variant="secondary"
+    >
+      <CardHeader>{children}</CardHeader>
     </Card>
   );
 };

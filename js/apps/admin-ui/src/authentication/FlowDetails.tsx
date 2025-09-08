@@ -6,9 +6,7 @@ import {
   AlertVariant,
   Button,
   ButtonVariant,
-  DragDrop,
   DropdownItem,
-  Droppable,
   Label,
   PageSection,
   ToggleGroup,
@@ -17,6 +15,7 @@ import {
   ToolbarContent,
   ToolbarItem,
 } from "@patternfly/react-core";
+import { DragDrop, Droppable } from "@patternfly/react-core/deprecated";
 import { DomainIcon, TableIcon } from "@patternfly/react-icons";
 import { Table, Tbody } from "@patternfly/react-table";
 import { useState } from "react";
@@ -173,7 +172,6 @@ export default function FlowDetails() {
   };
 
   const update = async (execution: ExpandableExecution) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { executionList, isCollapsed, ...ex } = execution;
     try {
       await adminClient.authenticationManagement.updateExecution(
@@ -364,7 +362,7 @@ export default function FlowDetails() {
         ]}
         dropdownItems={dropdownItems}
       />
-      <PageSection variant="light">
+      <PageSection hasBodyWrapper={false}>
         {executionList && hasExecutions && (
           <>
             <Toolbar id="toolbar">

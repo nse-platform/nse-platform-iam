@@ -1,6 +1,6 @@
 import type ClientRepresentation from "@keycloak/keycloak-admin-client/lib/defs/clientRepresentation";
 import type GlobalRequestResult from "@keycloak/keycloak-admin-client/lib/defs/globalRequestResult";
-import { AlertVariant, PageSection, Text } from "@patternfly/react-core";
+import { AlertVariant, PageSection, Content } from "@patternfly/react-core";
 import type { TFunction } from "i18next";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -75,7 +75,7 @@ export const AdvancedTab = ({ save, client }: AdvancedProps) => {
   };
 
   return (
-    <PageSection variant="light" className="pf-v5-u-py-0">
+    <PageSection hasBodyWrapper={false} className="pf-v5-u-py-0">
       <ScrollForm
         label={t("jumpToSection")}
         sections={[
@@ -89,9 +89,9 @@ export const AdvancedTab = ({ save, client }: AdvancedProps) => {
             isHidden: protocol !== PROTOCOL_OIDC,
             panel: (
               <>
-                <Text className="pf-v5-u-pb-lg">
+                <Content component="p" className="pf-v6-u-pb-lg">
                   {t("fineGrainOpenIdConnectConfigurationHelp")}
-                </Text>
+                </Content>
                 <FineGrainOpenIdConnect
                   save={save}
                   reset={() => {
@@ -126,9 +126,9 @@ export const AdvancedTab = ({ save, client }: AdvancedProps) => {
             isHidden: protocol !== PROTOCOL_OIDC,
             panel: (
               <>
-                <Text className="pf-v5-u-pb-lg">
+                <Content component="p" className="pf-v5-u-pb-lg">
                   {t("openIdConnectCompatibilityModesHelp")}
-                </Text>
+                </Content>
                 <OpenIdConnectCompatibilityModes
                   save={() => save()}
                   reset={() =>
@@ -148,9 +148,9 @@ export const AdvancedTab = ({ save, client }: AdvancedProps) => {
             isHidden: protocol === PROTOCOL_OIDC,
             panel: (
               <>
-                <Text className="pf-v5-u-pb-lg">
+                <Content component="p" className="pf-v5-u-pb-lg">
                   {t("fineGrainSamlEndpointConfigHelp")}
-                </Text>
+                </Content>
                 <FineGrainSamlEndpointConfig
                   save={() => save()}
                   reset={() =>
@@ -175,9 +175,9 @@ export const AdvancedTab = ({ save, client }: AdvancedProps) => {
             title: t("advancedSettings"),
             panel: (
               <>
-                <Text className="pf-v5-u-pb-lg">
+                <Content component="p" className="pf-v5-u-pb-lg">
                   {t("advancedSettings" + toUpperCase(protocol || ""))}
-                </Text>
+                </Content>
                 <AdvancedSettings
                   protocol={protocol}
                   save={() => save()}
@@ -211,9 +211,9 @@ export const AdvancedTab = ({ save, client }: AdvancedProps) => {
               !isFeatureEnabled(Feature.OpenId4VCI),
             panel: (
               <>
-                <Text className="pf-v5-u-pb-lg">
+                <Content component="p" className="pf-v5-u-pb-lg">
                   {t("openIdVerifiableCredentialsHelp")}
-                </Text>
+                </Content>
                 <OpenIdVerifiableCredentials
                   client={client}
                   save={save}
@@ -226,9 +226,9 @@ export const AdvancedTab = ({ save, client }: AdvancedProps) => {
             title: t("authenticationOverrides"),
             panel: (
               <>
-                <Text className="pf-v5-u-pb-lg">
+                <Content component="p" className="pf-v5-u-pb-lg">
                   {t("authenticationOverridesHelp")}
-                </Text>
+                </Content>
                 <AuthenticationOverrides
                   protocol={protocol}
                   save={() => save()}

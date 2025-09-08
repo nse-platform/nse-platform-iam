@@ -1,4 +1,5 @@
-import { ChipGroupProps, SelectProps } from "@patternfly/react-core";
+import { SelectProps } from "@patternfly/react-core";
+import { ChipGroupProps } from "@patternfly/react-core/deprecated";
 import {
   ControllerProps,
   FieldPath,

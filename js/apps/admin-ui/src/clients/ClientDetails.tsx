@@ -434,12 +434,12 @@ export default function ClientDetails() {
           />
         )}
       />
-      <PageSection variant="light" className="pf-v5-u-p-0">
+      <PageSection hasBodyWrapper={false} className="pf-v5-u-p-0">
         <FormProvider {...form}>
           <RoutableTabs
             data-testid="client-tabs"
             aria-label="client-tabs"
-            isBox
+            isBox={false}
             mountOnEnter
           >
             <Tab
@@ -528,6 +528,7 @@ export default function ClientDetails() {
                     clientId,
                     tab: "setup",
                   })}
+                  isBox={false}
                   mountOnEnter
                   unmountOnExit
                 >
@@ -568,6 +569,7 @@ export default function ClientDetails() {
                   {...authorizationTab}
                 >
                   <RoutableTabs
+                    isBox={false}
                     mountOnEnter
                     unmountOnExit
                     defaultLocation={toAuthorizationTab({

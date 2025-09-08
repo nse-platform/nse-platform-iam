@@ -216,7 +216,11 @@ export const SigningIn = () => {
   return (
     <Page title={t("signingIn")} description={t("signingInDescription")}>
       {credentialUniqueCategories.map((category) => (
-        <PageSection key={category} variant="light" className="pf-v5-u-px-0">
+        <PageSection
+          hasBodyWrapper={false}
+          key={category}
+          className="pf-v5-u-px-0"
+        >
           <Title headingLevel="h2" size="xl" id={`${category}-categ-title`}>
             {t(category as TFuncKey)}
           </Title>

@@ -2,6 +2,7 @@
 
 This directory contains the UIs and related libraries of the Keycloak project written in JavaScript (and TypeScript).
 
+// "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748",
 ## Directory structure
 
     ├── apps
@@ -24,3 +25,6 @@ To speed up the build process, the following build flag can be used to disable t
 ## Contributing
 
 If you want to contribute please look at the [coding guidelines](CODING_GUIDELINES.md)
+
+// 启动服务端脚本  pnpm start --admin-dev
+// 启动前端脚本  pnpm dev

@@ -67,7 +67,9 @@ export const TextControl = <
       {helperText && (
         <FormHelperText>
           <HelperText>
-            <HelperTextItem>{helperText}</HelperTextItem>
+            <HelperTextItem screenReaderText={helperText}>
+              {helperText}
+            </HelperTextItem>
           </HelperText>
         </FormHelperText>
       )}

@@ -1,5 +1,11 @@
 # Keycloak on Quarkus
 
+-- 启动后端服务
+pnpm start --admin-dev
+
+--启动前端服务调试
+pnpm dev
+
 The module holds the codebase to build the Keycloak Operator on top of [Quarkus](https://quarkus.io/).
 Using the [Quarkus Operator SDK](https://github.com/quarkiverse/quarkus-operator-sdk).
 

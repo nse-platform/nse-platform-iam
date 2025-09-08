@@ -5,6 +5,7 @@ import {
   NavGroup,
   PageSidebar,
   PageSidebarBody,
+  NavItemSeparator,
 } from "@patternfly/react-core";
 import { FormEvent } from "react";
 import { useTranslation } from "react-i18next";
@@ -53,7 +54,7 @@ const LeftNav = ({ title, path, id }: LeftNavProps) => {
         data-testid={name}
         to={`/${encodedRealm}${path}`}
         className={({ isActive }) =>
-          `pf-v5-c-nav__link${isActive ? " pf-m-current" : ""}`
+          `pf-v6-c-nav__link${isActive ? " pf-m-current" : ""}`
         }
       >
         {t(title)}
@@ -102,11 +103,11 @@ export const PageNav = () => {
   const showManageRealm = environment.masterRealm === environment.realm;
 
   return (
-    <PageSidebar className="keycloak__page_nav__nav">
+    <PageSidebar isSidebarOpen>
       <PageSidebarBody>
         <Nav onSelect={(_event, item) => onSelect(item as SelectedItem)}>
           <h2
-            className="pf-v5-c-nav__section-title"
+            className="pf-v6-c-nav__section-title"
             style={{ wordWrap: "break-word" }}
           >
             <span data-testid="currentRealm">
@@ -119,8 +120,10 @@ export const PageNav = () => {
               <LeftNav title={t("manageRealms")} path="/realms" />
             </NavGroup>
           )}
+
           {showManage && (
             <NavGroup aria-label={t("manage")} title={t("manage")}>
+              <NavItemSeparator />
               {isFeatureEnabled(Feature.Organizations) &&
                 realmRepresentation?.organizationsEnabled && (
                   <LeftNav title="organizations" path="/organizations" />
@@ -137,6 +140,7 @@ export const PageNav = () => {
 
           {showConfigure && (
             <NavGroup aria-label={t("configure")} title={t("configure")}>
+              <NavItemSeparator />
               <LeftNav title="realmSettings" path="/realm-settings" />
               <LeftNav title="authentication" path="/authentication" />
               {isFeatureEnabled(Feature.AdminFineGrainedAuthzV2) &&
