@@ -97,3 +97,4 @@ quarkus/data/*.db
 
 .env
 .env.test
+/js/apps/.cache_1mtotkv

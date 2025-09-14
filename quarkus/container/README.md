@@ -16,6 +16,6 @@ Alternatively, you need to build the local distribution first, then copy the dis
     cp $KEYCLOAK_SOURCE/quarkus/dist/target/keycloak-<VERSION>.tar.gz .
     docker build --build-arg KEYCLOAK_DIST=keycloak-<VERSION>.tar.gz -t <YOUR_TAG> .
 
-
+    mvn clean install -DskipTests=true
     cp ./quarkus/dist/target/keycloak-1.0.0.0-SNAPSHOT.tar.gz ./quarkus/container
     docker build --build-arg KEYCLOAK_DIST=/keycloak-1.0.0.0-SNAPSHOT.tar.gz -t nse-platform-iam .

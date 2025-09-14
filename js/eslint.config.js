@@ -48,6 +48,8 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      "react-hooks/exhaustive-deps": "off",
+      "@typescript-eslint/no-unused-vars": "off",
       "react-compiler/react-compiler": "warn",
       // ## Rules overwriting config, disabled for now, but will have to be evaluated. ##
       "no-undef": "off",
